@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@import "./styles/theme.css";
+@import "./styles/utilities.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-bg text-slate-100 antialiased;
+}
+
+/* Base smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide native cursor; we use a custom one */
+body {
+  cursor: none;
+}
+
+/* Hide scrollbars (Lenis handles smoothness) */
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Glassmorphism panel helper */
+.glass-panel {
+  @apply bg-surface/60 backdrop-blur-xl border border-white/5 shadow-glass;
+}
+
+/* Gradient border helper */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #7f5af0, #00c2ff, #2cb67d);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Scroll progress bar */
+#scroll-progress {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #7f5af0, #00c2ff, #2cb67d);
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 50;
+}
+
+/* Loader background */
+.loader-gradient {
+  background:
+    radial-gradient(circle at top, #7f5af0 0, transparent 55%),
+    radial-gradient(circle at bottom, #00c2ff 0, transparent 55%),
+    radial-gradient(circle at center, #2cb67d 0, transparent 40%);
+}

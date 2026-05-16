@@ -1,0 +1,19 @@
+:root {
+  --bg: #0b0c10;
+  --surface: #16161a;
+  --surface-soft: #242629;
+  --primary: #7f5af0;
+  --accent: #2cb67d;
+  --cyan: #00c2ff;
+}
+
+body {
+  background-color: var(--bg);
+  color: #e5e7eb;
+}
+
+/* Optional: selection color */
+::selection {
+  background: rgba(127, 90, 240, 0.4);
+  color: #f9fafb;
+}
